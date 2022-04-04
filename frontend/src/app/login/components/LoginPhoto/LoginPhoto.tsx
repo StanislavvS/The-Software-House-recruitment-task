@@ -1,7 +1,18 @@
-import React from "react";
+import LoginImage from "../../../../img/login-image.png";
+import useLoginPhotoStyles from "./styles";
 
 const LoginPhoto = () => {
-  return <></>;
+  const classes = useLoginPhotoStyles();
+
+  return (
+    <div className={classes.loginPhoto}>
+      <img
+        className={classes.loginPhotoImage}
+        src={LoginImage}
+        alt="Login Page Photo"
+      />
+    </div>
+  );
 };
 
 export default LoginPhoto;
