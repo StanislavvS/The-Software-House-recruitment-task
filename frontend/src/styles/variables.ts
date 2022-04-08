@@ -7,4 +7,14 @@ export const colors = {
   heather: "#b9bdcf",
   coolGrey: "#9194a5",
   eerieBlack: "#1a1b1d",
+  white: "#ffffff",
+};
+
+export const mixins = {
+  headerMediumSize: "600, Semi Bold",
+  standardTextFieldBorder: `1px solid ${colors.platinium}`,
+  standardBorderRadius: "8px",
+  buttonsBorderRadius: "4px",
+  standardInputHeight: "3rem",
+  standardInputWeight: "31rem",
 };

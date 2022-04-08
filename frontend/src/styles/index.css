@@ -4,3 +4,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Nunito", sans-serif;
 }
+input[type="text"],
+input[type="password"] {
+  outline: none;
+}
