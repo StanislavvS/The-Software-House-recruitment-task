@@ -2,6 +2,8 @@ import React from "react";
 import useLoginFormStyles from "./styles";
 import { ReactComponent as Logo } from "../../../../img/icons/logo.svg";
 import { Link } from "react-router-dom";
+import Button from "components/Button/Button";
+import InputTextField from "components/InputTextField/InputTextField";
 const LoginForm = () => {
   const classes = useLoginFormStyles();
 
@@ -17,11 +19,11 @@ const LoginForm = () => {
           >
             Username
           </label>
-          <input
-            className={classes.loginFormTextField}
-            id="loginFormUsernameField"
+          <InputTextField
             name="username"
             placeholder="Enter username"
+            id="loginFormUsernameField"
+            type="text"
           />
         </div>
         <div>
@@ -31,17 +33,14 @@ const LoginForm = () => {
           >
             Password
           </label>
-          <input
-            id="loginFormPasswordField"
-            className={classes.loginFormTextField}
+          <InputTextField
             name="password"
             placeholder="Enter password"
+            id="loginFormPasswordField"
             type="password"
           />
         </div>
-        <button className={classes.loginFormButton} type="submit">
-          Log in
-        </button>
+        <Button textValue="Log in" isSubmitButton />
         <Link
           className={classes.loginFormForgotPasswordLink}
           to="/forgot-password"

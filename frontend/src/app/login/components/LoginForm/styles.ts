@@ -26,37 +26,12 @@ const useLoginFormStyles = createUseStyles({
     top: "7%",
     position: "absolute",
   },
-  loginFormButton: {
-    "&:hover": {
-      backgroundColor: colors.persianBlue,
-    },
-    border: "none",
-    cursor: "pointer",
-    margin: "3.75rem 0 1rem 0",
-    color: colors.white,
-    backgroundColor: colors.dogerBlue,
-    height: mixins.standardInputHeight,
-    borderRadius: mixins.buttonsBorderRadius,
-  },
-  loginFormTextField: {
-    paddingLeft: "1rem",
-    marginBottom: "0.5rem",
-    height: mixins.standardInputHeight,
-    width: mixins.standardInputWidth,
-    outline: "none",
-    border: mixins.standardTextFieldBorder,
-    borderRadius: mixins.standardBorderRadius,
-    "&::placeholder": {
-      color: colors.coolGrey,
-    },
-  },
+
+  loginFormTextField: {},
   loginFormForgotPasswordLink: {
     color: colors.coolGrey,
   },
   "@media screen and (max-width: 768px)": {
-    loginFormTextField: {
-      width: mixins.mobileInputWidth,
-    },
     loginFormContainer: {
       maxWidth: mixins.mobileLoginContainerWidth,
     },
