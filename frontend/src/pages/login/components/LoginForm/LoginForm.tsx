@@ -2,8 +2,8 @@ import React from "react";
 import useLoginFormStyles from "./styles";
 import { ReactComponent as Logo } from "../../../../img/icons/logo.svg";
 import { Link } from "react-router-dom";
-import Button from "components/Button/Button";
-import InputTextField from "components/InputTextField/InputTextField";
+import Button from "app/components/Button/Button";
+import InputTextField from "app/components/InputTextField/InputTextField";
 const LoginForm = () => {
   const classes = useLoginFormStyles();
 

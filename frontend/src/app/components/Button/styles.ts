@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { colors, mixins } from "../../styles/variables";
+import { colors, mixins } from "../../../styles/variables";
 
 const useButtonStyles = createUseStyles({
   button: {
