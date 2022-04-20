@@ -42,7 +42,7 @@ const useLoginFormStyles = createUseStyles({
     paddingLeft: "1rem",
     marginBottom: "0.5rem",
     height: mixins.standardInputHeight,
-    width: mixins.standardInputWeight,
+    width: mixins.standardInputWidth,
     outline: "none",
     border: mixins.standardTextFieldBorder,
     borderRadius: mixins.standardBorderRadius,
@@ -52,6 +52,14 @@ const useLoginFormStyles = createUseStyles({
   },
   loginFormForgotPasswordLink: {
     color: colors.coolGrey,
+  },
+  "@media screen and (max-width: 768px)": {
+    loginFormTextField: {
+      width: mixins.mobileInputWidth,
+    },
+    loginFormContainer: {
+      maxWidth: mixins.mobileLoginContainerWidth,
+    },
   },
 });
 

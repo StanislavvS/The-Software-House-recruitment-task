@@ -16,5 +16,7 @@ export const mixins = {
   standardBorderRadius: "8px",
   buttonsBorderRadius: "4px",
   standardInputHeight: "3rem",
-  standardInputWeight: "31rem",
+  standardInputWidth: "31rem",
+  mobileInputWidth: "20rem",
+  mobileLoginContainerWidth: "30.5rem",
 };
