@@ -1,15 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { AppProviders } from "providers/AppProviders";
+import { AuthProvider } from "providers/auth-context";
 import { App } from "./app/App";
+
 import * as serviceWorker from "./serviceWorker";
 
 import "styles/index.css";
 
 ReactDOM.render(
-  <AppProviders>
-    <App />
-  </AppProviders>,
+  <AuthProvider>
+    <AppProviders>
+      <App />
+    </AppProviders>
+  </AuthProvider>,
   document.getElementById("root")
 );
 
