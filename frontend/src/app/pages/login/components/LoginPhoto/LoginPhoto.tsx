@@ -1,4 +1,4 @@
-import LoginImage from "../../../../img/login-image.png";
+import LoginImage from "../../../../../img/login-image.png";
 import useLoginPhotoStyles from "./styles";
 
 const LoginPhoto = () => {
