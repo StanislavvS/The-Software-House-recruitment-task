@@ -12,8 +12,6 @@ const AXIOS_CONFIG = {
 
 export const basicInstance = axios.create(AXIOS_CONFIG);
 
-// basicInstance.interceptors.request.use
-
 export default basicInstance;
 
 export const apiCall = basicInstance;

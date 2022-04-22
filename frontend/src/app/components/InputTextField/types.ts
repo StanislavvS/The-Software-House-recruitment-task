@@ -3,4 +3,5 @@ export interface InputTextFieldProps {
   placeholder: string;
   name?: string;
   id?: string;
+  onInputChangeHandler(e: React.FormEvent<HTMLInputElement>): void;
 }

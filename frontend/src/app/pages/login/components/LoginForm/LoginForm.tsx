@@ -16,6 +16,11 @@ const LoginForm = () => {
     password: "",
   });
 
+  const onInputChangeHandler = (e: React.FormEvent<HTMLInputElement>): void => {
+    const name = e.currentTarget.name;
+    setCredentials({ ...credentials, [name]: e.currentTarget.value });
+  };
+
   return (
     <Formik
       onSubmit={onFinish}
@@ -34,6 +39,7 @@ const LoginForm = () => {
               Username
             </label>
             <InputTextField
+              onInputChangeHandler={onInputChangeHandler}
               name="username"
               placeholder="Enter username"
               id="loginFormUsernameField"
@@ -48,6 +54,7 @@ const LoginForm = () => {
               Password
             </label>
             <InputTextField
+              onInputChangeHandler={onInputChangeHandler}
               name="password"
               placeholder="Enter password"
               id="loginFormPasswordField"

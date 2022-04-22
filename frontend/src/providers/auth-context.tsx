@@ -1,12 +1,24 @@
 import { Credentials } from "app/pages/login/components/LoginForm/types";
-import React, { createContext, useContext, useState, FC } from "react";
+import { createContext, useContext, useState, FC } from "react";
+import { basicInstance } from "../utils/api";
+import { USERS_LOGIN } from "utils/endpoints";
+import { AxiosResponse } from "axios";
+import { AuthContextType } from "./AuthContext.types";
 
-const AuthContext = createContext({});
+const login = ({ username, password }: Credentials): Promise<AxiosResponse> =>
+  basicInstance.post(USERS_LOGIN, {
+    username,
+    password,
+  });
 
-export const AuthProvider: FC = ({ children }) => {
+const AuthContext = createContext<AuthContextType>({
+  loggedIn: false,
+  logout: () => {},
+  login,
+});
+
+const AuthProvider: FC = (props) => {
   const [loggedIn, setLoggIn] = useState(false);
-
-  const login = ({ username, password }: Credentials) => {};
 
   const logout = () => {};
 
@@ -16,7 +28,9 @@ export const AuthProvider: FC = ({ children }) => {
     logout,
   };
 
-  return <AuthContext.Provider value={authContextValue} {...children} />;
+  return <AuthContext.Provider value={authContextValue} {...props} />;
 };
 
 const useAuth = () => useContext(AuthContext);
+
+export { AuthProvider, useAuth };

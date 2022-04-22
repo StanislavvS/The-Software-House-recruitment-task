@@ -7,12 +7,14 @@ const InputTextField = ({
   type,
   name,
   id,
+  onInputChangeHandler,
 }: InputTextFieldProps) => {
   const classes = useTextFiledStyles();
 
   return (
     <>
       <input
+        onChange={onInputChangeHandler}
         className={classes.textField}
         name={name}
         id={id}
