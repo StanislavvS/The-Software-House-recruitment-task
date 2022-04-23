@@ -3,28 +3,38 @@ import { createContext, useContext, useState, FC } from "react";
 import { basicInstance } from "../utils/api";
 import { USERS_LOGIN } from "utils/endpoints";
 import { AxiosResponse } from "axios";
-import { AuthContextType } from "./AuthContext.types";
+import { AuthContextType, DataLoginResponse, User } from "./AuthContext.types";
 
-const login = ({ username, password }: Credentials): Promise<AxiosResponse> =>
-  basicInstance.post(USERS_LOGIN, {
-    username,
-    password,
-  });
+const initialUserState: User = {
+  username: "",
+  id: -1,
+  isAuth: false,
+  avatar: "",
+};
+
+const login = ({ username, password }: Credentials) =>
+  basicInstance
+    .post<Credentials, AxiosResponse<DataLoginResponse>>(USERS_LOGIN, {
+      username,
+      password,
+    })
+    .then((res) => res.data);
 
 const AuthContext = createContext<AuthContextType>({
-  loggedIn: false,
+  setUser: () => {},
+  user: initialUserState,
   logout: () => {},
   login,
 });
 
 const AuthProvider: FC = (props) => {
-  const [loggedIn, setLoggIn] = useState(false);
-
+  const [user, setUser] = useState<User>(initialUserState);
   const logout = () => {};
 
   const authContextValue = {
+    setUser,
     login,
-    loggedIn,
+    user,
     logout,
   };
 

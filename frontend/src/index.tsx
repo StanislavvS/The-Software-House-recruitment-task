@@ -19,7 +19,7 @@ ReactDOM.render(
         <App />
       </AppProviders>
     </AuthProvider>
-    <ReactQueryDevtools initialIsOpen={false} />
+    <ReactQueryDevtools />
   </QueryClientProvider>,
   document.getElementById("root")
 );
