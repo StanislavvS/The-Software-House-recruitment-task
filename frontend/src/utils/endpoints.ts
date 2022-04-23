@@ -1,0 +1,11 @@
+export const USERS_LOGIN = "/users/login/";
+export const USERS_ME = "/users/:id/";
+export const GET_ME = "/users/:id/";
+export const GET_ALL_USERS = "/users/";
+export const POST_USERS = "/users/";
+export const GET_PRODUCTS = "/products/";
+export const POST_PRODUCTS = "/products/";
+export const PUT_PRODUCTS = "/products/";
+export const GET_PRODUCT = "/products/:id/";
+export const DELETE_PRODUCT = "/products/:id/";
+export const POST_FAKER_PRODUCT = "/products/faker/";

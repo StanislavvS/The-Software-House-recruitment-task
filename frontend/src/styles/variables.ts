@@ -8,11 +8,13 @@ export const colors = {
   coolGrey: "#9194a5",
   eerieBlack: "#1a1b1d",
   white: "#ffffff",
+  punch: "#DC3545",
 };
 
 export const mixins = {
   headerMediumSize: "600, Semi Bold",
   standardTextFieldBorder: `1px solid ${colors.platinium}`,
+  errorTextFieldBorder: `1px solid ${colors.punch}`,
   standardBorderRadius: "8px",
   buttonsBorderRadius: "4px",
   standardInputHeight: "3rem",
