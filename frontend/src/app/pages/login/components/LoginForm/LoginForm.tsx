@@ -7,7 +7,7 @@ import Button from "app/components/Button/Button";
 import InputTextField from "app/components/InputTextField/InputTextField";
 import { Credentials } from "./types";
 
-import { Formik } from "formik";
+import { Formik, ErrorMessage } from "formik";
 
 const LoginForm = () => {
   const classes = useLoginFormStyles();
@@ -31,38 +31,27 @@ const LoginForm = () => {
         enableReinitialize
         {...{ validationSchema }}
       >
-        {({ handleSubmit, setTouched, touched, isValid, isSubmitting }) => (
+        {({ handleSubmit }) => (
           <form className={classes.loginForm} onSubmit={handleSubmit}>
             <h2 className={classes.loginFormHeader}>Login</h2>
             <div>
-              <label
-                className={classes.loginFormLabel}
-                htmlFor="loginFormUsernameField"
-              >
-                Username
-              </label>
               <InputTextField
+                labelValue="Username"
                 onInputChangeHandler={onInputChangeHandler}
                 name="username"
                 placeholder="Enter username"
-                id="loginFormUsernameField"
                 type="text"
               />
             </div>
             <div>
-              <label
-                className={classes.loginFormLabel}
-                htmlFor="loginFormPasswordField"
-              >
-                Password
-              </label>
               <InputTextField
+                labelValue="Password"
                 onInputChangeHandler={onInputChangeHandler}
                 name="password"
                 placeholder="Enter password"
-                id="loginFormPasswordField"
                 type="password"
               />
+              <ErrorMessage name="loginFormPasswordField" />
             </div>
             <Button textValue="Log in" isSubmitButton />
             <Link

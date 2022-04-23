@@ -9,10 +9,6 @@ const useLoginFormStyles = createUseStyles({
     position: "relative",
     marginLeft: "10%",
   },
-  loginFormLabel: {
-    margin: "0 0 0.5rem 0",
-    display: "block",
-  },
 
   loginForm: {
     margin: "auto 0 auto 0",

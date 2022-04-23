@@ -1,5 +1,4 @@
 import { Credentials } from "app/pages/login/components/LoginForm/types";
-import { AxiosResponse } from "axios";
 
 export type AuthContextType = {
   user: User;

@@ -16,11 +16,14 @@ export const useLoginForm = () => {
     {
       onSuccess: (data) => {
         setUser({
-          ...user,
+          isAuth: true,
           username: data.user.username,
           avatar: data.user.avatar,
           id: data.user.id,
         });
+
+        localStorage.setItem("jwt", data.access_token);
+        history.replace("/");
       },
       onError: (error) => {
         console.log(error);
