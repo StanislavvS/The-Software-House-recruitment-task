@@ -13,7 +13,6 @@ const InputTextField = ({
   const classes = useTextFiledStyles();
   const [field, meta] = useField({
     placeholder,
-    type,
     name,
   });
 
@@ -24,6 +23,7 @@ const InputTextField = ({
       </label>
       <input
         {...field}
+        type={type}
         onChange={onInputChangeHandler}
         className={
           meta.touched && meta.error
