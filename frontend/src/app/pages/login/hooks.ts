@@ -1,7 +1,6 @@
-import React, { useCallback, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../../../providers/auth-context";
-import { generatePath } from "react-router";
 import { useMutation } from "react-query";
 import { Credentials } from "./components/LoginForm/types";
 import "antd/dist/antd.css";
@@ -33,6 +32,8 @@ export const useLoginForm = () => {
         });
 
         localStorage.setItem("jwt", data.access_token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+
         history.replace("/");
       },
       onError: (error) => {

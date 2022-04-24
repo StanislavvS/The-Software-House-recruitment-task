@@ -4,44 +4,47 @@ import { ReactComponent as Logo } from "../../../img/icons/logo.svg";
 import { Checkbox } from "antd";
 import SearchTextField from "./components/SearchTextField/SearchTextField";
 import LoginButton from "./components/LoginButton/LoginButton";
+import UserAvatar from "./components/UserAvatar/UserAvatar";
+import { useAuth } from "providers/auth-context";
 
 const NavBar = () => {
   const classes = useNavBarStyles();
+  const { user } = useAuth();
+
+  console.log(user);
 
   const renderCheckBox = (): JSX.Element => {
     return (
-      <li>
+      <div>
         <li className={classes.navBarCheckBox}>
           <Checkbox>Active</Checkbox>
         </li>
         <li className={classes.navBarCheckBox}>
           <Checkbox>Promo</Checkbox>
         </li>
-      </li>
+      </div>
     );
   };
   return (
     <nav className={classes.navBarContainer}>
       <ul className={classes.navBar}>
-        <li className={classes.navBarFirstColumn}>
+        <div className={classes.navBarFirstColumn}>
           <li>
             <Logo />
           </li>
           <li>
             <SearchTextField />
           </li>
-        </li>
-        <li className={classes.navBarSecondColumn}>
+        </div>
+        <div className={classes.navBarSecondColumn}>
           {renderCheckBox()}
-          <li>
-            <LoginButton />
-          </li>
-        </li>
+          <li>{user.isAuth ? <UserAvatar /> : <LoginButton />}</li>
+        </div>
       </ul>
       <ul className={classes.navBarMobile}>
         <li className={classes.navBarMobileFirstColumn}>
           <Logo />
-          <LoginButton />
+          {user.isAuth ? <UserAvatar /> : <LoginButton />}
         </li>
         <li>
           <SearchTextField />
