@@ -21,7 +21,7 @@ export const useLoginForm = () => {
     notification.open(args);
   };
 
-  const { mutate } = useMutation(
+  const { mutate, isLoading } = useMutation(
     ({ username, password }: Credentials) => login({ username, password }),
     {
       onSuccess: (data) => {
@@ -51,5 +51,5 @@ export const useLoginForm = () => {
     password: Yup.string().required("Please enter your password"),
   });
 
-  return { onFinish, validationSchema };
+  return { onFinish, validationSchema, isLoading };
 };
