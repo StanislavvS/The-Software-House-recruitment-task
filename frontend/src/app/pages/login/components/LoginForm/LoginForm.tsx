@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import useLoginFormStyles from "./styles";
 import { ReactComponent as Logo } from "../../../../../img/icons/logo.svg";
 import { Link } from "react-router-dom";

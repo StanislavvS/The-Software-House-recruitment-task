@@ -9,16 +9,22 @@ export const colors = {
   eerieBlack: "#1a1b1d",
   white: "#ffffff",
   punch: "#DC3545",
+  black: "#000000",
 };
 
 export const mixins = {
   headerMediumSize: "600, Semi Bold",
+  loginButtonBorder: `1px solid ${colors.dogerBlue}`,
   standardTextFieldBorder: `1px solid ${colors.platinium}`,
   errorTextFieldBorder: `1px solid ${colors.punch}`,
+  smallButtonHoverBorder: `1px solid ${colors.persianBlue}`,
   standardBorderRadius: "8px",
   buttonsBorderRadius: "4px",
   standardInputHeight: "3rem",
   standardInputWidth: "31rem",
+  standardSearchFieldWidth: "24.5rem",
   mobileInputWidth: "20rem",
   mobileLoginContainerWidth: "30.5rem",
+  smallButtonHeight: "2.2rem",
+  smallButtonWidth: "5.5rem",
 };

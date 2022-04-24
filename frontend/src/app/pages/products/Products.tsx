@@ -1,13 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-import { AppRoute } from 'routing/AppRoute.enum';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useProductsPage } from "./styles";
+import { AppRoute } from "routing/AppRoute.enum";
+import NavBar from "app/components/NavBar/NavBar";
 
 export const Products = () => {
+  const classes = useProductsPage();
   return (
-    <>
-      <h2>Products page</h2>
-      <Link to={AppRoute.Login}> Login </Link>
-    </>
+    <div className={classes.productsPage}>
+      <NavBar />
+    </div>
   );
 };
