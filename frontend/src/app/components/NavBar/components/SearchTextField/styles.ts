@@ -22,4 +22,15 @@ export const useSearchTextField = createUseStyles({
       font: "600, Semi Bold",
     },
   },
+  "@media screen and (max-width: 768px)": {
+    searchTextField: {
+      paddingLeft: "1rem",
+      marginTop: "8%",
+      width: "100%",
+    },
+
+    searchTextFieldLogo: {
+      top: "65%",
+    },
+  },
 });

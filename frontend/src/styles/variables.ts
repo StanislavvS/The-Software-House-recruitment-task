@@ -19,6 +19,7 @@ export const mixins = {
   errorTextFieldBorder: `1px solid ${colors.punch}`,
   smallButtonHoverBorder: `1px solid ${colors.persianBlue}`,
   standardBorderRadius: "8px",
+  smallSearchTextFieldWidth: "20.438rem",
   buttonsBorderRadius: "4px",
   standardInputHeight: "3rem",
   standardInputWidth: "31rem",
