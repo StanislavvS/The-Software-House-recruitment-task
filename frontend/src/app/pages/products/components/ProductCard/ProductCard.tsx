@@ -21,19 +21,28 @@ const ProductCard = ({
       return <Star />;
     });
 
+  console.log(active);
   return (
     <div className={classes.productCard}>
       <img
         src={image}
         alt="Photo of product"
-        className={classes.productCardImage}
+        className={
+          active
+            ? `${classes.productCardImage} ${classes.productCardImageIsNotActive}`
+            : classes.productCardImage
+        }
       />
       <PromoCheck promo={promo} />
       <div className={classes.productCardContentContainer}>
         <h3 className={classes.productCardHeader}>{name}</h3>
         <article className={classes.productCardArticle}>{description}</article>
         <div className={classes.productCardStarsContainer}>{ratingStars}</div>
-        <Button textValue="Show details" buttonClassName="productCardButton" />
+        <Button
+          textValue="Show details"
+          buttonClassName="productCardButton"
+          isDisabled={active}
+        />
       </div>
     </div>
   );

@@ -24,7 +24,9 @@ const Button = ({
       type={setButtonType()}
       onClick={onClickAction}
     >
-      {textValue}
+      {buttonClassName === "productCardButton" && isDisabled
+        ? "Unavailable"
+        : textValue}
     </button>
   );
 };

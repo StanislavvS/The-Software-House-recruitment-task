@@ -6,6 +6,10 @@ const useButtonStyles = createUseStyles({
     "&:hover": {
       backgroundColor: colors.persianBlue,
     },
+    "&:disabled": {
+      cursor: "not-allowed",
+      backgroundColor: colors.coolGrey,
+    },
     border: "none",
     cursor: "pointer",
 

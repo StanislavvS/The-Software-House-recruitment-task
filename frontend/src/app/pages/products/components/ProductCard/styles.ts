@@ -17,6 +17,9 @@ export const useProductCard = createUseStyles({
     borderTopLeftRadius: "8px",
     borderTopRightRadius: "8px",
   },
+  productCardImageIsNotActive: {
+    opacity: "0.5",
+  },
   productCardContentContainer: {
     margin: "4% 4% 0% 4%",
   },
