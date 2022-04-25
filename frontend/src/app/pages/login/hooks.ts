@@ -15,7 +15,7 @@ export const useLoginForm = () => {
     const args = {
       message: "Error ocured",
       description: "User pass wrong username or password",
-      duration: 3000,
+      duration: 3,
     };
     notification.open(args);
   };

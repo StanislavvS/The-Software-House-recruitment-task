@@ -1,7 +1,7 @@
 export type ProductsContextType = {
   products: Product[];
   getProductsFromBackend: () => Promise<ProductDataFromServer>;
-  setProducts?: React.Dispatch<React.SetStateAction<Product[]>>;
+  setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
 };
 
 export type ProductDataFromServer = {

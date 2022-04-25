@@ -11,14 +11,6 @@ const Products = React.lazy(() =>
 );
 
 export const AppRoutes = () => {
-  const { user, setUser } = useAuth();
-
-  if (user.id === -1) {
-    const user = localStorage.getItem("user");
-
-    if (user) setUser({ isAuth: true, ...JSON.parse(user) });
-  }
-
   return (
     <Switch>
       <Route

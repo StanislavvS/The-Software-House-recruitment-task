@@ -1,9 +1,14 @@
+import Spinner from "app/components/Spinner/Spinner";
+import { useProducts } from "providers/ProductsProvider";
 import React from "react";
 import { useProductsPage } from "../hooks";
 
 const ProductsSection = () => {
-  const { data } = useProductsPage();
-  console.log(data);
+  const { isLoading } = useProductsPage();
+  const { products } = useProducts();
+
+  if (isLoading) return <Spinner />;
+
   return <></>;
 };
 

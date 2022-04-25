@@ -7,6 +7,7 @@ const getProductsFromBackend = () =>
   basicInstance.get(GET_PRODUCTS).then((res) => res.data);
 
 const ProductsContext = createContext<ProductsContextType>({
+  setProducts: () => {},
   products: [],
   getProductsFromBackend,
 });
