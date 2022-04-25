@@ -6,9 +6,8 @@ import "tippy.js/dist/tippy.css";
 import { useRef } from "react";
 
 const UserAvatar = () => {
-  const { user } = useAuth();
+  const { logout } = useAuth();
   const classes = useAvatarStyles();
-  const ref = useRef();
 
   return (
     <>
@@ -19,7 +18,7 @@ const UserAvatar = () => {
           <button
             className={classes.tooltipButton}
             onClick={() => {
-              console.log("dupa");
+              logout();
             }}
           >
             Logout

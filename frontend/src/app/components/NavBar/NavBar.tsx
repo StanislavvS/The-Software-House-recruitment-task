@@ -11,8 +11,6 @@ const NavBar = () => {
   const classes = useNavBarStyles();
   const { user } = useAuth();
 
-  console.log(user);
-
   const renderCheckBox = (): JSX.Element => {
     return (
       <div>
