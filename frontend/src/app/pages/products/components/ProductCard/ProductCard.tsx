@@ -3,6 +3,7 @@ import { useProductCard } from "./styles";
 import { ReactComponent as Star } from "../../../../../img/icons/star.svg";
 import React from "react";
 import Button from "app/components/Button/Button";
+import PromoCheck from "./components/PromoCheck/PromoCheck";
 
 const ProductCard = ({
   active,
@@ -27,6 +28,7 @@ const ProductCard = ({
         alt="Photo of product"
         className={classes.productCardImage}
       />
+      <PromoCheck promo={promo} />
       <div className={classes.productCardContentContainer}>
         <h3 className={classes.productCardHeader}>{name}</h3>
         <article className={classes.productCardArticle}>{description}</article>

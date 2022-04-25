@@ -8,6 +8,7 @@ export const useProductCard = createUseStyles({
     height: "100%",
     backgroundColor: colors.white,
     display: "inline-block",
+    possition: "relative",
   },
   productCardImage: {
     width: "100%",
