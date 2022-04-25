@@ -36,7 +36,7 @@ export const useLoginForm = () => {
 
         history.replace("/");
       },
-      onError: (error) => {
+      onError: () => {
         openNotification();
       },
     }
