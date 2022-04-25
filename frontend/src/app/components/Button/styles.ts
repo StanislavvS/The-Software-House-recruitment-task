@@ -8,11 +8,21 @@ const useButtonStyles = createUseStyles({
     },
     border: "none",
     cursor: "pointer",
-    margin: "3.75rem 0 1rem 0",
+
     color: colors.white,
     backgroundColor: colors.dogerBlue,
-    height: mixins.standardInputHeight,
+
     borderRadius: mixins.buttonsBorderRadius,
+  },
+  loginButton: {
+    margin: "3.75rem 0 1rem 0",
+    height: mixins.standardInputHeight,
+  },
+
+  productCardButton: {
+    height: "2.2rem",
+    marginTop: "1rem",
+    width: "100%",
   },
 });
 
