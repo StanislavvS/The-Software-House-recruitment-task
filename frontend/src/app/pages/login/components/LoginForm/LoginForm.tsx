@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import useLoginFormStyles from "./styles";
 import { ReactComponent as Logo } from "../../../../../img/icons/logo.svg";
 import { Link } from "react-router-dom";
@@ -6,7 +6,6 @@ import { useLoginForm } from "../../hooks";
 import Button from "app/components/Button/Button";
 import InputTextField from "app/components/InputTextField/InputTextField";
 import { Credentials } from "./types";
-
 import { Formik, ErrorMessage } from "formik";
 
 const LoginForm = () => {
