@@ -7,6 +7,7 @@ const Button = ({
   textValue,
   isSubmitButton,
   onClickAction,
+  buttonClassName,
 }: ButtonProps) => {
   const setButtonType = () => (isSubmitButton ? "submit" : "button");
 
@@ -14,12 +15,18 @@ const Button = ({
 
   return (
     <button
-      className={classes.button}
+      className={
+        buttonClassName === "productCardButton"
+          ? `${classes.button} ${classes.productCardButton}`
+          : `${classes.button} ${classes.loginButton}`
+      }
       disabled={isDisabled}
       type={setButtonType()}
       onClick={onClickAction}
     >
-      {textValue}
+      {buttonClassName === "productCardButton" && isDisabled
+        ? "Unavailable"
+        : textValue}
     </button>
   );
 };

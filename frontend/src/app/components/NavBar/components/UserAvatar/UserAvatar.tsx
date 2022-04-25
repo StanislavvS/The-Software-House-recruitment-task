@@ -3,7 +3,6 @@ import AvatarImage from "../../../../../img/Avatar.png";
 import { useAvatarStyles } from "./styles";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
-import { useRef } from "react";
 
 const UserAvatar = () => {
   const { logout } = useAuth();

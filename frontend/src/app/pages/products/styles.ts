@@ -4,6 +4,6 @@ import { createUseStyles } from "react-jss";
 export const useProductsPage = createUseStyles({
   productsPage: {
     backgroundColor: colors.athensGray,
-    height: "100vh",
+    height: "100%",
   },
 });

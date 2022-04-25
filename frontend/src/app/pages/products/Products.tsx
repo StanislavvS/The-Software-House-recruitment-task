@@ -1,13 +1,18 @@
 import React from "react";
 import { useProductsPage } from "./styles";
 import NavBar from "app/components/NavBar/NavBar";
+import { ProductsProvider } from "providers/ProductsProvider";
+import ProductsSection from "./components/ProductsSection/ProductsSection";
 
 export const Products = () => {
   const classes = useProductsPage();
 
   return (
-    <div className={classes.productsPage}>
-      <NavBar />
-    </div>
+    <ProductsProvider>
+      <div className={classes.productsPage}>
+        <NavBar />
+        <ProductsSection />
+      </div>
+    </ProductsProvider>
   );
 };

@@ -29,6 +29,13 @@ const AuthContext = createContext<AuthContextType>({
 
 const AuthProvider: FC = (props) => {
   const [user, setUser] = useState<User>(initialUserState);
+
+  if (user.id === -1) {
+    const user = localStorage.getItem("user");
+
+    if (user) setUser({ isAuth: true, ...JSON.parse(user) });
+  }
+
   const logout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("jwt");

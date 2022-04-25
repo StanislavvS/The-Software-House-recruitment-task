@@ -6,6 +6,7 @@ export const useNavBarStyles = createUseStyles({
     height: "12%",
     backgroundColor: colors.white,
     width: "100vw",
+    zIndex: 3,
     position: "fixed",
   },
   navBarMobile: {

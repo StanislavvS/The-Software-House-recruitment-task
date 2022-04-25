@@ -14,6 +14,8 @@ export const colors = {
 
 export const mixins = {
   headerMediumSize: "600, Semi Bold",
+  standardProductCardWidth: "18rem",
+  standardProductCartHeight: "25rem",
   loginButtonBorder: `1px solid ${colors.dogerBlue}`,
   standardTextFieldBorder: `1px solid ${colors.platinium}`,
   errorTextFieldBorder: `1px solid ${colors.punch}`,
