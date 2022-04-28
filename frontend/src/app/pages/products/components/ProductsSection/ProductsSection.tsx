@@ -7,7 +7,6 @@ import { useProductsSectionStyles } from "./styles";
 
 const ProductsSection = () => {
   const { isLoading } = useProductsPage();
-
   const { products } = useProducts();
   const classes = useProductsSectionStyles();
 

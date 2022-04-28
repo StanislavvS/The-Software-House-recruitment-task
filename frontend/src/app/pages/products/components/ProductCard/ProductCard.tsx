@@ -21,7 +21,6 @@ const ProductCard = ({
       return <Star />;
     });
 
-  console.log(active);
   return (
     <div className={classes.productCard}>
       <img
