@@ -1,7 +1,7 @@
 import { createUseStyles } from "react-jss";
 import { colors, mixins } from "styles/variables";
 
-export const useProductCard = createUseStyles({
+export const useProductCardStyles = createUseStyles({
   productCard: {
     borderRadius: "8px",
     width: "100%",
@@ -35,5 +35,8 @@ export const useProductCard = createUseStyles({
   },
   productCardHeader: {
     height: "2rem",
+  },
+  productCardRatingStar: {
+    cursor: "pointer",
   },
 });

@@ -17,6 +17,7 @@ export const useProductsPage = () => {
   const { isLoading } = useQuery("products", getProductsFromBackend, {
     onSuccess: (data) => {
       setProducts(data.items);
+      console.log(data.items);
     },
     onError: () => {
       openNotification();

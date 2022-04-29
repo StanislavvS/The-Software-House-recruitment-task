@@ -9,7 +9,7 @@ export const usePromoCheckStyles = createUseStyles({
     color: colors.white,
     textAlign: "center",
     position: "absolute",
-    top: "20%",
+    top: "23%",
   },
   promoDisabled: {
     display: "none",
