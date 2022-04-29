@@ -6,7 +6,6 @@ export const useProductCard = () => {
 
     return useMemo(() => {
       return fullfilledStars.map((_, index) => {
-        console.log("dupa", rating, index);
         return index < rating ? 1 : 0;
       });
     }, [rating]);
