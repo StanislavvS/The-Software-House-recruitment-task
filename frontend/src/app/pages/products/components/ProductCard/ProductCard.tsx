@@ -1,9 +1,11 @@
 import { Product } from "providers/ProductsProvider.types";
-import { useProductCard } from "./styles";
+import { useProductCardStyles } from "./styles";
 import { ReactComponent as Star } from "../../../../../img/icons/star.svg";
+import { ReactComponent as FilledStar } from "../../../../../img/icons/fill-star.svg";
 import React from "react";
 import Button from "app/components/Button/Button";
 import PromoCheck from "./components/PromoCheck/PromoCheck";
+import { useProductCard } from "./hooks";
 
 const ProductCard = ({
   active,
@@ -14,12 +16,10 @@ const ProductCard = ({
   promo,
   rating,
 }: Product) => {
-  const classes = useProductCard();
-  const ratingStars = Array(5)
-    .fill(0)
-    .map(() => {
-      return <Star />;
-    });
+  const classes = useProductCardStyles();
+  const { convertRatingToRatingStar } = useProductCard();
+
+  console.log(convertRatingToRatingStar(rating));
 
   return (
     <div className={classes.productCard}>
@@ -36,7 +36,7 @@ const ProductCard = ({
       <div className={classes.productCardContentContainer}>
         <h3 className={classes.productCardHeader}>{name}</h3>
         <article className={classes.productCardArticle}>{description}</article>
-        <div className={classes.productCardStarsContainer}>{ratingStars}</div>
+        {/* <div className={classes.productCardStarsContainer}>{ratingStars}</div> */}
         <Button
           textValue="Show details"
           buttonClassName="productCardButton"

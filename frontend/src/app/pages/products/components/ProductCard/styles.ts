@@ -1,7 +1,7 @@
 import { createUseStyles } from "react-jss";
 import { colors, mixins } from "styles/variables";
 
-export const useProductCard = createUseStyles({
+export const useProductCardStyles = createUseStyles({
   productCard: {
     borderRadius: "8px",
     width: "100%",
@@ -35,5 +35,24 @@ export const useProductCard = createUseStyles({
   },
   productCardHeader: {
     height: "2rem",
+  },
+  productCardRatingStar: {
+    // background: colors.seaBuckthorn,
+    color: colors.seaBuckthorn,
+    // svg: {
+    //   path: {
+    //     fill: colors.seaBuckthorn,
+    //     stroke: colors.seaBuckthorn,
+    //   },
+    // },
+
+    // svg {
+    //   background: $white;
+
+    //   path {
+    //     fill: $pattensBlue;
+    //     stroke: $pattensBlue;
+    //   }
+    // }
   },
 });
