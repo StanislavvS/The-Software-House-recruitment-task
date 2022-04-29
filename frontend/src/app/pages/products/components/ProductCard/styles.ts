@@ -37,22 +37,6 @@ export const useProductCardStyles = createUseStyles({
     height: "2rem",
   },
   productCardRatingStar: {
-    // background: colors.seaBuckthorn,
-    color: colors.seaBuckthorn,
-    // svg: {
-    //   path: {
-    //     fill: colors.seaBuckthorn,
-    //     stroke: colors.seaBuckthorn,
-    //   },
-    // },
-
-    // svg {
-    //   background: $white;
-
-    //   path {
-    //     fill: $pattensBlue;
-    //     stroke: $pattensBlue;
-    //   }
-    // }
+    cursor: "pointer",
   },
 });
