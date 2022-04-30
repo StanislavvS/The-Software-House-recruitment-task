@@ -7,7 +7,10 @@ import PromoCheck from "./components/PromoCheck/PromoCheck";
 import { useProductCard } from "./hooks";
 import { ReactComponent as Star } from "../../../../../img/icons/star.svg";
 import { ReactComponent as FilledStar } from "../../../../../img/icons/fill-star.svg";
+import { Modal } from "antd";
 import { v4 as uuidv4 } from "uuid";
+import ProductView from "./components/ProductView/ProductView";
+import "antd/dist/antd.css";
 
 const ProductCard = ({
   active,
@@ -19,12 +22,26 @@ const ProductCard = ({
   rating,
 }: Product) => {
   const classes = useProductCardStyles();
+  const { setCurrentProductId } = useProducts();
   const { convertRatingToRatingStar } = useProductCard();
   const [currentProductRating, setCurrentPruductRaing] =
     useState<number>(rating);
 
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div className={classes.productCard}>
+      <Modal visible={isModalVisible} onCancel={handleCancel} footer={null}>
+        <ProductView />
+      </Modal>
       <img
         src={image}
         alt="Photo of product"
@@ -63,6 +80,10 @@ const ProductCard = ({
           textValue="Show details"
           buttonClassName="productCardButton"
           isDisabled={active}
+          onClickAction={() => {
+            setCurrentProductId(id);
+            showModal();
+          }}
         />
       </div>
     </div>

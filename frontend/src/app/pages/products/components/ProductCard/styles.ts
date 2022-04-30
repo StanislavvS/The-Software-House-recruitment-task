@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import { colors, mixins } from "styles/variables";
+import "antd/dist/antd.css";
 
 export const useProductCardStyles = createUseStyles({
   productCard: {

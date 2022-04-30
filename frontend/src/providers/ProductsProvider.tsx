@@ -10,15 +10,20 @@ const ProductsContext = createContext<ProductsContextType>({
   setProducts: () => {},
   products: [],
   getProductsFromBackend,
+  setCurrentProductId: () => {},
+  currentProductId: -1,
 });
 
 const ProductsProvider: FC = (props) => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [currentProductId, setCurrentProductId] = useState<number>(-1);
 
   const productsContextValue = {
     getProductsFromBackend,
     products,
     setProducts,
+    currentProductId,
+    setCurrentProductId,
   };
 
   return <ProductsContext.Provider value={productsContextValue} {...props} />;
