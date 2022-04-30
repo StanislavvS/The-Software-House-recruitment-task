@@ -1,7 +1,11 @@
+import React from "react";
+
 export type ProductsContextType = {
   products: Product[];
   getProductsFromBackend: () => Promise<ProductDataFromServer>;
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
+  setCurrentProductId: React.Dispatch<React.SetStateAction<number>>;
+  currentProductId: number;
 };
 
 export type ProductDataFromServer = {
