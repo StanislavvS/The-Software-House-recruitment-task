@@ -46,11 +46,11 @@ const ProductCard = ({
         src={image}
         alt="Photo of product"
         className={
-          active
+          !active
             ? `${classes.productCardImage} ${classes.productCardImageIsNotActive}`
             : classes.productCardImage
         }
-      />
+      ></img>
       <PromoCheck promo={promo} />
       <div className={classes.productCardContentContainer}>
         <h3 className={classes.productCardHeader}>{name}</h3>
@@ -79,7 +79,7 @@ const ProductCard = ({
         <Button
           textValue="Show details"
           buttonClassName="productCardButton"
-          isDisabled={active}
+          isDisabled={!active}
           onClickAction={() => {
             setCurrentProductId(id);
             showModal();

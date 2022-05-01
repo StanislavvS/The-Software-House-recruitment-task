@@ -1,8 +1,9 @@
 import React from "react";
 import { useSearchTextField } from "./styles";
 import { ReactComponent as SearchIcon } from "../../../../../img/icons/search-icon.svg";
+import { SearchTextFieldProps } from "./types";
 
-const SearchTextField = () => {
+const SearchTextField = ({ onChangeHanlder }: SearchTextFieldProps) => {
   const classes = useSearchTextField();
 
   return (
@@ -12,6 +13,7 @@ const SearchTextField = () => {
         className={classes.searchTextField}
         type="text"
         placeholder="Search"
+        onChange={(e) => onChangeHanlder(e)}
       />
     </div>
   );

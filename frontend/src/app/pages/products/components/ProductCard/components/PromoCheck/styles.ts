@@ -8,10 +8,7 @@ export const usePromoCheckStyles = createUseStyles({
     backgroundColor: colors.seaBuckthorn,
     color: colors.white,
     textAlign: "center",
-    position: "absolute",
-    top: "23%",
-  },
-  promoDisabled: {
-    display: "none",
+    zIndex: "3",
+    top: "43%",
   },
 });

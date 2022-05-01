@@ -6,23 +6,33 @@ import SearchTextField from "./components/SearchTextField/SearchTextField";
 import LoginButton from "./components/LoginButton/LoginButton";
 import UserAvatar from "./components/UserAvatar/UserAvatar";
 import { useAuth } from "providers/auth-context";
+import { useNavBar } from "./hooks";
 
 const NavBar = () => {
   const classes = useNavBarStyles();
   const { user } = useAuth();
+  const { onCheckboxChangeHandler, onInputChangeHandler } = useNavBar();
 
   const renderCheckBox = (): JSX.Element => {
     return (
       <div>
         <li className={classes.navBarCheckBox}>
-          <Checkbox>Active</Checkbox>
+          <Checkbox
+            name={"active"}
+            onChange={(e) => onCheckboxChangeHandler(e)}
+          >
+            Active
+          </Checkbox>
         </li>
         <li className={classes.navBarCheckBox}>
-          <Checkbox>Promo</Checkbox>
+          <Checkbox name={"promo"} onChange={(e) => onCheckboxChangeHandler(e)}>
+            Promo
+          </Checkbox>
         </li>
       </div>
     );
   };
+
   return (
     <nav className={classes.navBarContainer}>
       <ul className={classes.navBar}>
@@ -31,7 +41,7 @@ const NavBar = () => {
             <Logo />
           </li>
           <li>
-            <SearchTextField />
+            <SearchTextField onChangeHanlder={onInputChangeHandler} />
           </li>
         </div>
         <div className={classes.navBarSecondColumn}>
@@ -45,7 +55,7 @@ const NavBar = () => {
           {user.isAuth ? <UserAvatar /> : <LoginButton />}
         </li>
         <li>
-          <SearchTextField />
+          <SearchTextField onChangeHanlder={onInputChangeHandler} />
         </li>
         {renderCheckBox()}
       </ul>
