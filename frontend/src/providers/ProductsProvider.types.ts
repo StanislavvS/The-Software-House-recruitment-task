@@ -1,6 +1,8 @@
 import React from "react";
 
 export type ProductsContextType = {
+  filtersOption: FilterOptions;
+  setFiltersOption: React.Dispatch<React.SetStateAction<FilterOptions>>;
   products: Product[];
   getProductsFromBackend: () => Promise<ProductDataFromServer>;
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
@@ -34,3 +36,9 @@ export type Product = {
   promo: boolean;
   rating: number;
 };
+
+export interface FilterOptions {
+  promo: boolean;
+  active: boolean;
+  filterTextValue: string;
+}

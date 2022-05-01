@@ -9,9 +9,9 @@ export const useProductCardStyles = createUseStyles({
     height: "100%",
     backgroundColor: colors.white,
     display: "inline-block",
-    possition: "relative",
   },
   productCardImage: {
+    possition: "relative",
     width: "100%",
     height: "45%",
     objectFit: "cover",
@@ -19,6 +19,7 @@ export const useProductCardStyles = createUseStyles({
     borderTopRightRadius: "8px",
   },
   productCardImageIsNotActive: {
+    possition: "relative",
     opacity: "0.5",
   },
   productCardContentContainer: {

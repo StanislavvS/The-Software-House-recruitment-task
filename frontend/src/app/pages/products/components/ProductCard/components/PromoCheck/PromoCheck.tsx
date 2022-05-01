@@ -5,9 +5,7 @@ import { PromoCheckProps } from "./types";
 const PromoCheck = ({ promo }: PromoCheckProps) => {
   const classes = usePromoCheckStyles();
 
-  return (
-    <div className={promo ? classes.promo : classes.promoDisabled}>Promo</div>
-  );
+  return promo ? <div className={classes.promo}>Promo</div> : <></>;
 };
 
 export default PromoCheck;
