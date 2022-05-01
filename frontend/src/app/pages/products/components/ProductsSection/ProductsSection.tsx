@@ -5,6 +5,7 @@ import { Product } from "providers/ProductsProvider.types";
 import React, { useState, useEffect } from "react";
 import { useProductsPage } from "../../hooks";
 import { useProductsSectionStyles } from "./styles";
+import { Pagination } from "antd";
 
 const ProductsSection = () => {
   const { isLoading } = useProductsPage();
@@ -26,8 +27,6 @@ const ProductsSection = () => {
     filtersOption.promo,
     filtersOption.filterTextValue,
   ]);
-
-  console.log(filterProducts, products);
 
   if (isLoading) return <Spinner />;
 
@@ -64,21 +63,19 @@ const ProductsSection = () => {
               />
             )
           )}
-      {/* 
-      {filterProducts.map(
-        ({ id, name, description, promo, active, image, rating }) => (
-          <ProductCard
-            key={id}
-            id={id}
-            name={name}
-            description={description}
-            promo={promo}
-            active={active}
-            image={image}
-            rating={rating}
-          />
-        )
-      )} */}
+
+      <Pagination
+        defaultCurrent={1}
+        total={
+          filtersOption.active ||
+          filtersOption.promo ||
+          filtersOption.filterTextValue !== ""
+            ? filterProducts.length
+            : products.length
+        }
+        defaultPageSize={8}
+        showSizeChanger={false}
+      />
     </div>
   );
 };
