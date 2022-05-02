@@ -1,7 +1,6 @@
 import Spinner from "app/components/Spinner/Spinner";
 import ProductCard from "app/pages/products/components/ProductCard/ProductCard";
 import NoProductFound from "./components/NoProductFound";
-import { Product } from "providers/ProductsProvider.types";
 import ReactPaginate from "react-paginate";
 import { useProductsPage } from "../../hooks";
 import { useProductsSectionStyles } from "./styles";

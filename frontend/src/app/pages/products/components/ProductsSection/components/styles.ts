@@ -21,4 +21,11 @@ export const useNoproductFoundStyles = createUseStyles({
     marginTop: "1.5%",
     color: colors.heather,
   },
+
+  "@media screen and (max-width: 768px)": {
+    noProductFoundContainer: {
+      margin: "10% 0 0 7%",
+      width: "30rem",
+    },
+  },
 });
