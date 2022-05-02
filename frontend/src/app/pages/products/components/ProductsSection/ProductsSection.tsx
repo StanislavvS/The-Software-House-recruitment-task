@@ -1,5 +1,6 @@
 import Spinner from "app/components/Spinner/Spinner";
 import ProductCard from "app/pages/products/components/ProductCard/ProductCard";
+import NoProductFound from "./components/NoProductFound";
 import { Product } from "providers/ProductsProvider.types";
 import ReactPaginate from "react-paginate";
 import { useProductsPage } from "../../hooks";
@@ -19,28 +20,31 @@ const ProductsSection = () => {
 
   if (isLoading) return <Spinner />;
 
-  console.log(pagesVisted + itemsPerPage);
   return (
     <div className={classes.productSectionContainer}>
       <div className={classes.productsSection}>
-        {products
-          .slice(pagesVisted, pagesVisted + itemsPerPage)
-          .map(({ id, name, description, promo, active, image, rating }) => (
-            <ProductCard
-              key={id}
-              id={id}
-              name={name}
-              description={description}
-              promo={promo}
-              active={active}
-              image={image}
-              rating={rating}
-            />
-          ))}
+        {products.length > 0 ? (
+          products
+            .slice(pagesVisted, pagesVisted + itemsPerPage)
+            .map(({ id, name, description, promo, active, image, rating }) => (
+              <ProductCard
+                key={id}
+                id={id}
+                name={name}
+                description={description}
+                promo={promo}
+                active={active}
+                image={image}
+                rating={rating}
+              />
+            ))
+        ) : (
+          <NoProductFound />
+        )}
       </div>
       <ReactPaginate
         className={classes.productSectionPagination}
-        pageCount={products.length / 8}
+        pageCount={Math.ceil(products.length / 8)}
         onPageChange={({ selected }) =>
           setPaginationValues({ ...paginationValues, selectedPage: selected })
         }
