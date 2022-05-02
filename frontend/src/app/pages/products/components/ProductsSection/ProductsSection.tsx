@@ -1,43 +1,32 @@
 import Spinner from "app/components/Spinner/Spinner";
 import ProductCard from "app/pages/products/components/ProductCard/ProductCard";
-import { useProducts } from "providers/ProductsProvider";
+import NoProductFound from "./components/NoProductFound";
 import { Product } from "providers/ProductsProvider.types";
-import React, { useState, useEffect } from "react";
+import ReactPaginate from "react-paginate";
 import { useProductsPage } from "../../hooks";
 import { useProductsSectionStyles } from "./styles";
+import { usePagination } from "./hooks";
 
 const ProductsSection = () => {
   const { isLoading } = useProductsPage();
-  const { products, filtersOption } = useProducts();
+  const {
+    setPaginationValues,
+    paginationValues,
+    products,
+    pagesVisted,
+    itemsPerPage,
+  } = usePagination();
   const classes = useProductsSectionStyles();
-  const [filterProducts, setFilterProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    setFilterProducts(
-      products.filter(
-        ({ name, promo, active }) =>
-          active === filtersOption.active &&
-          promo === filtersOption.promo &&
-          name.toLowerCase().includes(filtersOption.filterTextValue)
-      )
-    );
-  }, [
-    filtersOption.active,
-    filtersOption.promo,
-    filtersOption.filterTextValue,
-  ]);
-
-  console.log(filterProducts, products);
 
   if (isLoading) return <Spinner />;
 
   return (
-    <div className={classes.productsSectionContainer}>
-      {filtersOption.active ||
-      filtersOption.promo ||
-      filtersOption.filterTextValue !== ""
-        ? filterProducts.map(
-            ({ id, name, description, promo, active, image, rating }) => (
+    <div className={classes.productSectionContainer}>
+      <div className={classes.productsSection}>
+        {products.length > 0 ? (
+          products
+            .slice(pagesVisted, pagesVisted + itemsPerPage)
+            .map(({ id, name, description, promo, active, image, rating }) => (
               <ProductCard
                 key={id}
                 id={id}
@@ -48,37 +37,23 @@ const ProductsSection = () => {
                 image={image}
                 rating={rating}
               />
-            )
-          )
-        : products.map(
-            ({ id, name, description, promo, active, image, rating }) => (
-              <ProductCard
-                key={id}
-                id={id}
-                name={name}
-                description={description}
-                promo={promo}
-                active={active}
-                image={image}
-                rating={rating}
-              />
-            )
-          )}
-      {/* 
-      {filterProducts.map(
-        ({ id, name, description, promo, active, image, rating }) => (
-          <ProductCard
-            key={id}
-            id={id}
-            name={name}
-            description={description}
-            promo={promo}
-            active={active}
-            image={image}
-            rating={rating}
-          />
-        )
-      )} */}
+            ))
+        ) : (
+          <NoProductFound />
+        )}
+      </div>
+      <ReactPaginate
+        className={classes.productSectionPagination}
+        pageCount={Math.ceil(products.length / 8)}
+        onPageChange={({ selected }) =>
+          setPaginationValues({ ...paginationValues, selectedPage: selected })
+        }
+        pageRangeDisplayed={paginationValues.selectedPage === 1 ? 2 : 3}
+        marginPagesDisplayed={2}
+        nextLabel=""
+        previousLabel=""
+        breakLabel="..."
+      />
     </div>
   );
 };

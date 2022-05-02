@@ -11,15 +11,16 @@ export const useProductCardStyles = createUseStyles({
     display: "inline-block",
   },
   productCardImage: {
-    possition: "relative",
     width: "100%",
     height: "45%",
     objectFit: "cover",
     borderTopLeftRadius: "8px",
     borderTopRightRadius: "8px",
   },
+  productCardImageContainer: {
+    position: "relative",
+  },
   productCardImageIsNotActive: {
-    possition: "relative",
     opacity: "0.5",
   },
   productCardContentContainer: {
