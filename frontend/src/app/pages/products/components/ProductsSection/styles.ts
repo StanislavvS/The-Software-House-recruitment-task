@@ -3,9 +3,8 @@ import { colors } from "styles/variables";
 
 export const useProductsSectionStyles = createUseStyles({
   productsSection: {
-    padding: "7% 8% 10% 9%",
+    padding: "10%",
     gridTemplateColumns: "23.5% 23.5% 23.5% 23.5%",
-    gridTemplateRows: "3.75% 3.75% 3.75% 3.75%",
     gap: "1.5rem",
     display: "grid",
   },
@@ -26,7 +25,7 @@ export const useProductsSectionStyles = createUseStyles({
     },
     display: "flex",
     justifyContent: "space-between",
-    paddingBottom: "5%",
+    paddingBottom: "10%",
     width: "20%",
   },
 });

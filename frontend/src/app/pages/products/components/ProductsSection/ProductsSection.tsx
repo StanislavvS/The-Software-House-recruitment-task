@@ -19,6 +19,7 @@ const ProductsSection = () => {
 
   if (isLoading) return <Spinner />;
 
+  console.log(pagesVisted + itemsPerPage);
   return (
     <div className={classes.productSectionContainer}>
       <div className={classes.productsSection}>

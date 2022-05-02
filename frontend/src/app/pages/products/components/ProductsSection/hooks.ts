@@ -17,7 +17,7 @@ export const usePagination = () => {
   });
 
   const itemsPerPage = 8;
-  const pagesVisted = paginationValues.selectedPage + itemsPerPage;
+  const pagesVisted = paginationValues.selectedPage * itemsPerPage;
 
   useEffect(() => {
     setFilterProducts(
