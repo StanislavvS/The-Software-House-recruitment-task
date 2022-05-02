@@ -1,7 +1,8 @@
-import axios from "axios";
-import createAuthRefreshInterceptor from "axios-auth-refresh";
-import { StatusCodes } from "http-status-codes";
+import axios, { AxiosRequestConfig } from "axios";
 import MockAdapter from "axios-mock-adapter";
+
+const jwt = localStorage.getItem("jwt");
+const user = localStorage.getItem("user");
 
 const AXIOS_CONFIG = {
   baseURL: "https://join-tsh-api-staging.herokuapp.com",
@@ -11,6 +12,17 @@ const AXIOS_CONFIG = {
 };
 
 export const basicInstance = axios.create(AXIOS_CONFIG);
+
+basicInstance.interceptors.request.use((config: AxiosRequestConfig) => {
+  if (user) {
+    if (config.headers === undefined) {
+      config.headers = {};
+    }
+    config.headers.Authorization = `Bearer ${jwt}`;
+  }
+
+  return config;
+});
 
 export default basicInstance;
 

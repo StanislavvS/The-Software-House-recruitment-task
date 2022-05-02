@@ -17,9 +17,11 @@ const ProductsSection = () => {
   } = usePagination();
   const classes = useProductsSectionStyles();
 
-  if (isLoading) return <Spinner />;
+  const pageCount = Math.ceil(products.length / 8);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <div className={classes.productSectionContainer}>
       <div className={classes.productsSection}>
         {products.length > 0 ? (
@@ -43,12 +45,12 @@ const ProductsSection = () => {
       </div>
       <ReactPaginate
         className={classes.productSectionPagination}
-        pageCount={Math.ceil(products.length / 8)}
+        pageCount={pageCount}
         onPageChange={({ selected }) =>
           setPaginationValues({ ...paginationValues, selectedPage: selected })
         }
         pageRangeDisplayed={paginationValues.selectedPage === 1 ? 2 : 3}
-        marginPagesDisplayed={2}
+        marginPagesDisplayed={pageCount === 7 ? 2 : 3}
         nextLabel=""
         previousLabel=""
         breakLabel="..."
