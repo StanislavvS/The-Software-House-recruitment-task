@@ -28,4 +28,11 @@ export const useProductsSectionStyles = createUseStyles({
     paddingBottom: "10%",
     width: "20%",
   },
+
+  "@media screen and (max-width: 768px)": {
+    productsSection: {
+      paddingTop: "50%",
+      gridTemplateColumns: "100%",
+    },
+  },
 });
