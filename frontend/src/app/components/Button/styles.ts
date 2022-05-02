@@ -26,6 +26,7 @@ const useButtonStyles = createUseStyles({
   productCardButton: {
     height: "2.2rem",
     marginTop: "1rem",
+    marginBottom: "7%",
     width: "100%",
   },
 });

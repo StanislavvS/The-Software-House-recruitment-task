@@ -42,16 +42,18 @@ const ProductCard = ({
       <Modal visible={isModalVisible} onCancel={handleCancel} footer={null}>
         <ProductView />
       </Modal>
-      <img
-        src={image}
-        alt="Photo of product"
-        className={
-          !active
-            ? `${classes.productCardImage} ${classes.productCardImageIsNotActive}`
-            : classes.productCardImage
-        }
-      ></img>
-      <PromoCheck promo={promo} />
+      <div className={classes.productCardImageContainer}>
+        <img
+          src={image}
+          alt="Photo of product"
+          className={
+            !active
+              ? `${classes.productCardImage} ${classes.productCardImageIsNotActive}`
+              : classes.productCardImage
+          }
+        ></img>
+        <PromoCheck promo={promo} />
+      </div>
       <div className={classes.productCardContentContainer}>
         <h3 className={classes.productCardHeader}>{name}</h3>
         <article className={classes.productCardArticle}>{description}</article>
