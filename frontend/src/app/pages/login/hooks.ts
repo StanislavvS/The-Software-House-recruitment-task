@@ -32,6 +32,7 @@ export const useLoginForm = () => {
         });
 
         localStorage.setItem("jwt", data.access_token);
+        localStorage.setItem("expiration_date", data.expiresIn);
         localStorage.setItem("user", JSON.stringify(data.user));
 
         history.replace("/");
