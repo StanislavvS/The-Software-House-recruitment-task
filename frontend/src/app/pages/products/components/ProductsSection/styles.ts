@@ -12,10 +12,34 @@ export const useProductsSectionStyles = createUseStyles({
   productSectionContainer: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+  },
+
+  productSectionPaginationContainer: {
+    marginLeft: "41%",
+    width: "20%",
+    display: "flex",
+    marginBottom: "10%",
+  },
+
+  productSectionPaginationButton: {
+    border: "none",
+    background: "transparent",
+    cursor: "pointer",
+
+    "& active": {
+      color: colors.heather,
+    },
+  },
+
+  productSectionPaginationActiveButtonFirst: {
+    color: colors.heather,
+  },
+  productSectionPaginationActiveButtonLast: {
+    color: colors.heather,
   },
 
   productSectionPagination: {
+    paddingLeft: "0",
     listStyle: "none",
     height: "20%",
     fontWeight: "bold",
@@ -25,8 +49,14 @@ export const useProductsSectionStyles = createUseStyles({
     },
     display: "flex",
     justifyContent: "space-between",
-    paddingBottom: "10%",
-    width: "20%",
+
+    width: "80%",
+  },
+
+  productSectionPaginationActive: {
+    "& a": {
+      color: colors.persianBlue,
+    },
   },
 
   "@media screen and (max-width: 768px)": {
