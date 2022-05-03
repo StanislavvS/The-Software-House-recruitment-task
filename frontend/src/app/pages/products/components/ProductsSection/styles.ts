@@ -15,7 +15,7 @@ export const useProductsSectionStyles = createUseStyles({
   },
 
   productSectionPaginationContainer: {
-    marginLeft: "41%",
+    marginLeft: "40%",
     width: "20%",
     display: "flex",
     marginBottom: "10%",
