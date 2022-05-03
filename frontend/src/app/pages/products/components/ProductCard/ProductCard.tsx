@@ -79,6 +79,7 @@ const ProductCard = ({
           )}
         </div>
         <Button
+          dataTestId="product-card-button"
           textValue="Show details"
           buttonClassName="productCardButton"
           isDisabled={!active}

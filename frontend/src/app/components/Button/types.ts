@@ -4,4 +4,5 @@ export interface ButtonProps {
   textValue: string;
   onClickAction?: () => void;
   buttonClassName?: string;
+  dataTestId: string;
 }

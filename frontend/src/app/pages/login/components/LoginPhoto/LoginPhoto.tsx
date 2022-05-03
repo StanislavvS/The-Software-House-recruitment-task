@@ -10,6 +10,7 @@ const LoginPhoto = () => {
         className={classes.loginPhotoImage}
         src={LoginImage}
         alt="Login Page Photo"
+        data-testid="login-page-image"
       />
     </div>
   );

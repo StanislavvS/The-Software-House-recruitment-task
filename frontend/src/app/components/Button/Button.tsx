@@ -8,6 +8,7 @@ const Button = ({
   isSubmitButton,
   onClickAction,
   buttonClassName,
+  dataTestId,
 }: ButtonProps) => {
   const setButtonType = () => (isSubmitButton ? "submit" : "button");
 
@@ -23,6 +24,7 @@ const Button = ({
       disabled={isDisabled}
       type={setButtonType()}
       onClick={onClickAction}
+      data-testid={dataTestId}
     >
       {buttonClassName === "productCardButton" && isDisabled
         ? "Unavailable"
