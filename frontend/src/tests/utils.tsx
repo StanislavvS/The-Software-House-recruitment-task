@@ -3,12 +3,22 @@ import { rest } from "msw";
 import * as React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
+const mockArray = new Array(100).fill({
+  id: 1,
+  name: "Incredible Plastic Pizza",
+  description: "Molestiae iure eum voluptas culpa et ut quasi.",
+  rating: 2,
+  image: "https://picsum.photos/640/480?random=1074",
+  promo: true,
+  active: true,
+});
+
 export const handlers = [
-  rest.get("*/react-query", (req, res, ctx) => {
+  rest.get("*/products/*", (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
-        name: "mocked-react-query",
+        mockArray,
       })
     );
   }),
