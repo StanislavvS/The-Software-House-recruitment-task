@@ -19,7 +19,6 @@ ReactDOM.render(
         <App />
       </AppProviders>
     </AuthProvider>
-    <ReactQueryDevtools />
   </QueryClientProvider>,
   document.getElementById("root")
 );
