@@ -66,6 +66,7 @@ const ProductsSection = () => {
           pageRangeDisplayed={paginationValues.selectedPage === 1 ? 2 : 3}
           marginPagesDisplayed={pageCount === 7 ? 2 : 3}
           activeClassName={classes.productSectionPaginationActive}
+          forcePage={paginationValues.selectedPage}
           nextLabel=""
           previousLabel=""
           breakLabel="..."

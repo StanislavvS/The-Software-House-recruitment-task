@@ -7,7 +7,7 @@ const LoginButton = () => {
   const classes = useLoginButtonStyles();
 
   return (
-    <Link to={AppRoute.Login}>
+    <Link data-testid="login-user-button" to={AppRoute.Login}>
       <button className={classes.loginButton}>Log in</button>
     </Link>
   );

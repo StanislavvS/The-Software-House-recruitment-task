@@ -24,7 +24,9 @@ const InputTextField = ({
       <input
         {...field}
         type={type}
+        id={field.name}
         onChange={onInputChangeHandler}
+        data-testid="input-text-field"
         className={
           meta.touched && meta.error
             ? `${classes.textField} ${classes.textFieldInvalid}`

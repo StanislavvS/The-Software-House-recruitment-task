@@ -24,6 +24,10 @@ basicInstance.interceptors.request.use((config: AxiosRequestConfig) => {
   return config;
 });
 
+basicInstance.interceptors.response.use((response) => {
+  return response;
+});
+
 export default basicInstance;
 
 export const apiCall = basicInstance;

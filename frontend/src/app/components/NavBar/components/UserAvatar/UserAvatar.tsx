@@ -25,7 +25,12 @@ const UserAvatar = () => {
         }
         arrow={false}
       >
-        <img className={classes.avatar} src={AvatarImage} alt="userAvatar" />
+        <img
+          data-testid="avatar-image"
+          className={classes.avatar}
+          src={AvatarImage}
+          alt="userAvatar"
+        />
       </Tippy>
     </>
   );

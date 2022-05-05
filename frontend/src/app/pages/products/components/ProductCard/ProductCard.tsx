@@ -38,7 +38,7 @@ const ProductCard = ({
   };
 
   return (
-    <div className={classes.productCard}>
+    <div className={classes.productCard} data-testid="product-card">
       <Modal visible={isModalVisible} onCancel={handleCancel} footer={null}>
         <ProductView />
       </Modal>
@@ -79,6 +79,7 @@ const ProductCard = ({
           )}
         </div>
         <Button
+          dataTestId="product-card-button"
           textValue="Show details"
           buttonClassName="productCardButton"
           isDisabled={!active}

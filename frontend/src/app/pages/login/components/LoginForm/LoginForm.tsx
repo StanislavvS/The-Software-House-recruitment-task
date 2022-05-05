@@ -23,7 +23,7 @@ const LoginForm = () => {
 
   return (
     <div className={classes.loginFormContainer}>
-      <Logo className={classes.loginFormIcon} />
+      <Logo className={classes.loginFormIcon} data-testid="logo" />
       <Formik
         onSubmit={onFinish}
         initialValues={credentials}
@@ -52,10 +52,15 @@ const LoginForm = () => {
               />
               <ErrorMessage name="loginFormPasswordField" />
             </div>
-            <Button textValue="Log in" isSubmitButton />
+            <Button
+              textValue="Log in"
+              isSubmitButton
+              dataTestId="login-button"
+            />
             <Link
               className={classes.loginFormForgotPasswordLink}
               to="/forgot-password"
+              data-testid="forgoten-password-link"
             >
               Forgot password?
             </Link>

@@ -5,14 +5,14 @@ import { USERS_LOGIN } from "utils/endpoints";
 import { AxiosResponse } from "axios";
 import { AuthContextType, DataLoginResponse, User } from "./AuthContext.types";
 
-const initialUserState: User = {
+export const initialUserState: User = {
   username: "",
   id: -1,
   isAuth: false,
   avatar: "",
 };
 
-const login = ({ username, password }: Credentials) =>
+export const login = ({ username, password }: Credentials) =>
   basicInstance
     .post<Credentials, AxiosResponse<DataLoginResponse>>(USERS_LOGIN, {
       username,
@@ -55,4 +55,4 @@ const AuthProvider: FC = (props) => {
 
 const useAuth = () => useContext(AuthContext);
 
-export { AuthProvider, useAuth };
+export { AuthProvider, useAuth, AuthContext };
