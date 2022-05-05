@@ -5,7 +5,7 @@ import { USERS_LOGIN } from "utils/endpoints";
 import { AxiosResponse } from "axios";
 import { AuthContextType, DataLoginResponse, User } from "./AuthContext.types";
 
-const initialUserState: User = {
+export const initialUserState: User = {
   username: "",
   id: -1,
   isAuth: false,

@@ -5,7 +5,7 @@ import { render, screen } from "tests";
 import { Products } from "./Products";
 
 describe("Products", () => {
-  test("Displays page header", async () => {
+  test("Displays products page", () => {
     render(<Products />);
   });
 });
