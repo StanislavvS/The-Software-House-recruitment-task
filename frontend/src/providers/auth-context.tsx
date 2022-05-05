@@ -12,7 +12,7 @@ const initialUserState: User = {
   avatar: "",
 };
 
-const login = ({ username, password }: Credentials) =>
+export const login = ({ username, password }: Credentials) =>
   basicInstance
     .post<Credentials, AxiosResponse<DataLoginResponse>>(USERS_LOGIN, {
       username,
@@ -55,4 +55,4 @@ const AuthProvider: FC = (props) => {
 
 const useAuth = () => useContext(AuthContext);
 
-export { AuthProvider, useAuth };
+export { AuthProvider, useAuth, AuthContext };
