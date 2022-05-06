@@ -25,7 +25,9 @@ export const usePagination = () => {
         ({ name, promo, active }) =>
           active === filtersOption.active &&
           promo === filtersOption.promo &&
-          name.toLowerCase().includes(filtersOption.filterTextValue)
+          name
+            .toLowerCase()
+            .includes(filtersOption.filterTextValue.toLowerCase())
       )
     );
   }, [
