@@ -44,19 +44,24 @@ const ProductsSection = () => {
         )}
       </div>
       <div className={classes.productSectionPaginationContainer}>
-        <button
-          className={
-            paginationValues.selectedPage === 0
-              ? `${classes.productSectionPaginationButton} ${classes.productSectionPaginationActiveButtonFirst}`
-              : classes.productSectionPaginationButton
-          }
-          type="button"
-          onClick={() =>
-            setPaginationValues({ ...paginationValues, selectedPage: 0 })
-          }
-        >
-          First
-        </button>
+        {products.length > 0 ? (
+          <button
+            className={
+              paginationValues.selectedPage === 0
+                ? `${classes.productSectionPaginationButton} ${classes.productSectionPaginationActiveButtonFirst}`
+                : classes.productSectionPaginationButton
+            }
+            type="button"
+            onClick={() =>
+              setPaginationValues({ ...paginationValues, selectedPage: 0 })
+            }
+          >
+            First
+          </button>
+        ) : (
+          <></>
+        )}
+
         <ReactPaginate
           className={classes.productSectionPagination}
           pageCount={pageCount}
@@ -71,22 +76,26 @@ const ProductsSection = () => {
           previousLabel=""
           breakLabel="..."
         />
-        <button
-          type="button"
-          className={
-            paginationValues.selectedPage === pageCount - 1
-              ? `${classes.productSectionPaginationButton} ${classes.productSectionPaginationActiveButtonLast}`
-              : classes.productSectionPaginationButton
-          }
-          onClick={() =>
-            setPaginationValues({
-              ...paginationValues,
-              selectedPage: pageCount - 1,
-            })
-          }
-        >
-          Last
-        </button>
+        {products.length > 0 ? (
+          <button
+            type="button"
+            className={
+              paginationValues.selectedPage === pageCount - 1
+                ? `${classes.productSectionPaginationButton} ${classes.productSectionPaginationActiveButtonLast}`
+                : classes.productSectionPaginationButton
+            }
+            onClick={() =>
+              setPaginationValues({
+                ...paginationValues,
+                selectedPage: pageCount - 1,
+              })
+            }
+          >
+            Last
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
