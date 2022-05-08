@@ -53,7 +53,7 @@ export const useNavBarStyles = createUseStyles({
       display: "none",
     },
     navBarContainer: {
-      height: "35%",
+      height: "38%",
     },
     navBarMobile: {
       listStyle: "none",

@@ -4,6 +4,7 @@ import { mixins, colors } from "styles/variables";
 export const useSearchTextField = createUseStyles({
   searchTextFieldContainer: {
     position: "relative",
+    zIndex: "1",
   },
   searchTextFieldLogo: {
     position: "absolute",
