@@ -1,6 +1,6 @@
 # The-Software-House-recruitment-task
 
-Link to hosted app https://frontend-8rbyhbdru-stanislavvs.vercel.app/
+Link to hosted app https://frontend-adbtxtyv3-stanislavvs.vercel.app/
 
 To run app via terminal:
 
